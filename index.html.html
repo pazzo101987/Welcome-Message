@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Welcome Message</title>
+  </head>
+
+  <body>
+    <div class="output"></div>
+    Name : <input type="text" value="" />
+    <button type="button">Message</button>
+    <script>
+      const button = document.querySelector("button");
+      const message = document.querySelector(".output");
+      const input = document.querySelector("input");
+
+      button.addEventListener("click", function () {
+        let name = input.value;
+        if (name === "") {
+          alert("Please type a name");
+        } else if (name.length < 3) {
+          message.innerHTML = `<h2>"${name}" is less than 3 letters</h2>`;
+          message.style.color = "red";
+        } else {
+          message.innerHTML = `<h1>Welcome again ${name}</h1>`;
+        }
+      });
+    </script>
+  </body>
+</html>
